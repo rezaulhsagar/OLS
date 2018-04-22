@@ -1,0 +1,129 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet" type="text/css" href="masterStyle.css">
+
+<head runat="server">
+    <title>Online Learning System</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <div>
+                <ul class="navbar">
+                    <div style="background: black; color: white; text-align: center; padding: 10px 16px; text-decoration: none;">
+                        Online Learning System
+                    </div>
+                </ul>
+            </div>
+            <ul class="navbar">
+                <div style="float: left">
+                    <li><a href="home.aspx"><b>Home</b></a></li>
+                    <li><a href="resources.aspx"><b>Resources</b></a></li>
+                    <li><a href="about.aspx"><b>About</b></a></li>
+                </div>
+                <div style="float: right">
+                    <style>
+                        .button {
+                            height: 39px;
+                            border-style: none;
+                            background-color: white;
+                            text-align: center;
+                            font-family: Consolas;
+                            font-weight: bold;
+                            cursor: pointer;
+                            padding: 10px 16px;
+                        }
+
+                            .button:hover {
+                                background: black;
+                                color: white;
+                                text-decoration: none;
+                            }
+                    </style>
+                    <li>
+                        <asp:Button ID="firstbutton" runat="server" Text="Sign Up" CssClass="button" OnClick="firstbutton_Click" />
+                    </li>
+                    <li>
+                        <asp:Button ID="secondbutton" runat="server" Text="Login" CssClass="button" OnClick="secondbutton_Click" />
+                    </li>
+                </div>
+            </ul>
+        </div>
+
+        <div id="loginmodal" style="display: none" class="modalstyle" runat="server">
+
+            <ul>
+                <li>
+                    <asp:TextBox ID="usernameinput" class="field-style field-split" placeholder="Username" runat="server" />
+                </li>
+                <li>
+                    <asp:TextBox ID="passwordinput" TextMode="Password" class="field-style field-split" placeholder="Password" runat="server" />
+                </li>
+
+            </ul>
+            <ul>
+                <li>
+                    <asp:Button ID="loginbutton" runat="server" CssClass="button" Text="Login" runat="server" OnClick="loginbutton_Click" />
+                </li>
+            </ul>
+        </div>
+
+        <div id="loginok" style="display: none" class="modalstyle" runat="server">
+            <asp:Label ID="loginokmsg" runat="server"></asp:Label>
+        </div>
+        <div id="loginfailed" style="display: none" class="modalstyle" runat="server">
+            Sorry, Incorrect Username or Password!
+        </div>
+        <div id="signupok" style="display: none" class="modalstyle" runat="server">
+            Successfully Registered!
+        </div>
+        <div id="signupfailed" style="display: none" class="modalstyle" runat="server">
+            Sorry, username has taken!
+        </div>
+        
+
+
+        <div id="signupmodal" style="display: none" class="modalstyle" runat="server">
+
+            <ul>
+                <li>
+                    <asp:TextBox ID="firstnameinput" class="field-style field-split" placeholder="First Name" runat="server"></asp:TextBox>
+                </li>
+                <li>
+                    <asp:TextBox ID="lastnameinput" class="field-style field-split" placeholder="Last Name" runat="server"></asp:TextBox>
+                </li>
+                <li>
+                    <asp:TextBox ID="emailinput" class="field-style field-split" placeholder="Email" runat="server"></asp:TextBox>
+                </li>
+                <li>
+                    <asp:TextBox ID="susernameinput" class="field-style field-split" placeholder="Userame" runat="server"></asp:TextBox>
+                </li>
+                <li>
+                    <asp:TextBox ID="spasswordinput" runat="server" class="field-style field-split" placeholder="Password" TextMode="Password"></asp:TextBox>
+
+                </li>
+
+            </ul>
+
+            <ul>
+                <li>
+                    <asp:Button ID="signup" runat="server" CssClass="button" Text="Sign Up" runat="server" OnClick="signupbutton_Click" />
+                </li>
+            </ul>
+        </div>
+
+
+
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
+
+</body>
+</html>
